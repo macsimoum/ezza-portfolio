@@ -1,0 +1,270 @@
+import * as React from "react";
+
+import BackupIcon from "@mui/icons-material/Backup";
+import {
+  Timeline,
+  TimelineConnector,
+  TimelineContent,
+  TimelineDot,
+  TimelineItem,
+  TimelineOppositeContent,
+  TimelineSeparator,
+} from "@mui/lab";
+import {
+  LinearProgress,
+  Step,
+  StepContent,
+  StepLabel,
+  Stepper,
+} from "@mui/material";
+import Alert from "@mui/material/Alert";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import axios from "axios";
+import moment from "moment";
+import { Link } from "react-router-dom";
+import ReactHtmlParser from "react-html-parser";
+import { useAuthContext } from "../../../hooks/use-auth-context.hook";
+import Paper from "@mui/material/Paper";
+
+const localStorageKey = String("activity");
+
+const BuddybossScreen = () => {
+  const { user } = useAuthContext();
+  const [activities, setActivities] = React.useState([]);
+  const [activitiesError, setActivitiesError] = React.useState(null);
+  const [activitiesLoading, setActivitiesLoading] = React.useState(false);
+  const [activeStep, setActiveStep] = React.useState(0);
+
+  React.useEffect(() => {
+    if (user) {
+      setActivitiesLoading(true);
+      const dataString = localStorage.getItem(localStorageKey);
+      if (dataString) {
+        const data = JSON.parse(dataString);
+        if (data.exp >= moment().format()) {
+          console.log("get data from local storage", data.value.length);
+          ReactHtmlParser(data.value[0].content.rendered);
+          setActivities(data.value);
+          setActivitiesLoading(false);
+        }
+      } else {
+        getActivities().then((data) => {
+          console.log("get data from url", data.value.length);
+          setActivitiesLoading(false);
+          setActivitiesError(null);
+        });
+      }
+    }
+  }, [user]);
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleReset = () => {
+    setActiveStep(0);
+  };
+
+  const getActivities = async () => {
+    setActivitiesLoading(true);
+    setActivitiesError(null);
+    try {
+      console.log("here");
+      // noinspection JSCheckFunctionSignatures
+      const res = await axios.get("/api/bots/buddyboss/activity", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
+      localStorage.setItem(
+        localStorageKey,
+        JSON.stringify({
+          value: res.data,
+          exp: moment().add(1, "days").format(),
+        })
+      );
+      return res.data;
+    } catch (e) {
+      setActivitiesLoading(false);
+      setActivitiesError(e.response.data.message);
+    }
+  };
+
+  const handleGetActivities = () => {
+    if (user) {
+      getActivities().then((r) => console.log(r));
+    }
+  };
+
+  const steps = [
+    {
+      level: 1,
+      label: "Getting the Activities from server",
+      description: `In this step, you should wait until the application get activities data
+      from server and prepare those data to run this bot.
+      Please click on the below button to proceed this step.
+      `,
+    },
+    {
+      level: 2,
+      label: "Create an ad group",
+      description:
+        "An ad group contains one or more ads which target a shared set of keywords.",
+    },
+    {
+      level: 3,
+      label: "Create an ad",
+      description: `Try out different ad text to see what brings in the most customers,
+              and learn how to enhance your ads using features like ad extensions.
+              If you run into any problems with your ads, find out how to tell if
+              they're running and how to resolve approval issues.`,
+    },
+  ];
+
+  return (
+    <div>
+      <h3>BuddyBoss Telegram Bot</h3>
+      <Box sx={{ maxWidth: 400 }}>
+        <Stepper activeStep={activeStep} orientation="vertical">
+          {steps.map((step, index) => (
+            <Step key={step.label}>
+              <StepLabel
+                optional={
+                  index === 2 ? (
+                    <Typography variant="caption">Last step</Typography>
+                  ) : null
+                }
+              >
+                {step.label}
+              </StepLabel>
+              <StepContent>
+                <Typography>{step.description}</Typography>
+                <Box sx={{ mb: 2 }}>
+                  <div>
+                    <div>
+                      {step.level === 1 && activities.length === 0 ? (
+                        <React.Fragment>
+                          <Typography variant="h6" mt={2}>
+                            Getting Activities...
+                          </Typography>
+                          <LinearProgress color="inherit" />
+                        </React.Fragment>
+                      ) : (
+                        <React.Fragment>
+                          <div>
+                            {step.level === 1 && activities.length !== 0 ? (
+                              <React.Fragment>Done</React.Fragment>
+                            ) : null}
+                          </div>
+                          <Button
+                            variant="contained"
+                            onClick={handleNext}
+                            sx={{ mt: 1, mr: 1 }}
+                          >
+                            {index === steps.length - 1 ? "Finish" : "Continue"}
+                          </Button>
+                          <Button
+                            disabled={index === 0}
+                            onClick={handleBack}
+                            sx={{ mt: 1, mr: 1 }}
+                          >
+                            Back
+                          </Button>
+                        </React.Fragment>
+                      )}
+                    </div>
+                  </div>
+                </Box>
+              </StepContent>
+            </Step>
+          ))}
+        </Stepper>
+        {activeStep === steps.length && (
+          <Paper square elevation={0} sx={{ p: 3 }}>
+            <Typography>All steps completed - you&apos;re finished</Typography>
+            <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
+              Reset
+            </Button>
+          </Paper>
+        )}
+      </Box>
+      <Button component={Link} to="/bots/buddyboss/templates">
+        Create Template
+      </Button>
+    </div>
+  );
+};
+
+export default BuddybossScreen;
+
+// {activities !== [] && (
+//   <React.Fragment>
+//     <h1>Activities</h1>
+//     {activities.map((obj, index) => (
+//       <React.Fragment key={index}>
+//         {obj.component === String("blogs") ? (
+//           <div>{ReactHtmlParser(obj.content.rendered)}</div>
+//         ) : null}
+//       </React.Fragment>
+//     ))}
+//   </React.Fragment>
+// )}
+
+// {activitiesLoading && (
+//   <Box marginY={10}>
+//     <Timeline position="alternate">
+//       <TimelineItem>
+//         <TimelineOppositeContent
+//           sx={{ m: "auto 0" }}
+//           align="right"
+//           variant="body2"
+//           color="text.secondary"
+//         >
+//           {moment().format("MMM Do YY")}
+//         </TimelineOppositeContent>
+//         <TimelineSeparator>
+//           <TimelineConnector />
+//           <TimelineDot>
+//             <BackupIcon />
+//           </TimelineDot>
+//           <TimelineConnector />
+//         </TimelineSeparator>
+//         <TimelineContent sx={{ py: "12px", px: 2 }}>
+//           <Typography variant="h6" component="span">
+//             Activities
+//           </Typography>
+//           <Typography>
+//             Getting Activities...
+//             <LinearProgress color="inherit" />
+//           </Typography>
+//         </TimelineContent>
+//       </TimelineItem>
+//     </Timeline>
+//   </Box>
+// )}
+// {activities !== [] &&}
+// {activitiesError && (
+//   <Box marginY={10}>
+//     <Alert
+//       severity="error"
+//       action={
+//         <Button
+//           onClick={handleGetActivities}
+//           color="inherit"
+//           size="small"
+//         >
+//           TRY AGAIN
+//         </Button>
+//       }
+//     >
+//       {activitiesError}
+//     </Alert>
+//   </Box>
+// )}

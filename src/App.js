@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import RecordsScreen from "./features/records.screen";
+import { Route, Routes } from "react-router-dom";
+import HomeScreen from "./features/home.screen";
+import EducationsScreen from "./features/educations.screen";
+import SkillsScreen from "./features/skills.screen";
+import PublicationsScreen from "./features/publications.screen";
+import SkeletonComponent from "./components/skeleton.component";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <SkeletonComponent>
+        <Routes>
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="/records" element={<RecordsScreen />} />
+          <Route path="/educations" element={<EducationsScreen />} />
+          <Route path="/skills" element={<SkillsScreen />} />
+          <Route path="/publications" element={<PublicationsScreen />} />
+        </Routes>
+      </SkeletonComponent>
+    </React.Fragment>
   );
 }
 
