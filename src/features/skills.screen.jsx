@@ -185,7 +185,7 @@ const VibrationAnimationSkill = keyframes`
 const VibrationSpanSkill = styled.div`
   transition: all 500ms;
   display: inline-block;
-  margin-right: 1px;
+  margin-right: 3px;
   text-shadow: 1px 2px 3px #999;
   //filter: blur(1px);
   font-weight: bold;
@@ -193,10 +193,6 @@ const VibrationSpanSkill = styled.div`
 `;
 
 const SkillsScreen = () => {
-  function handleOnClick(name) {
-    console.log(name);
-  }
-
   // noinspection JSValidateTypes
   return (
     <div>

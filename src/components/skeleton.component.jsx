@@ -6,20 +6,24 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import Paper from "@mui/material/Paper";
 import ScienceIcon from "@mui/icons-material/Science";
 import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
-import TerminalIcon from "@mui/icons-material/Terminal";
 import SchoolIcon from "@mui/icons-material/School";
 import TuneIcon from "@mui/icons-material/Tune";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AppBar, Toolbar, Typography } from "@mui/material";
 
 const SkeletonComponent = ({ children }) => {
   const [value, setValue] = React.useState(0);
   const ref = React.useRef(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     ref.current.ownerDocument.body.scrollTop = 0;
   }, [value]);
+
+  function handleGoHome() {
+    navigate("/");
+  }
 
   // noinspection JSValidateTypes
   return (
@@ -44,6 +48,7 @@ const SkeletonComponent = ({ children }) => {
             variant="text"
             noWrap
             component="div"
+            onClick={handleGoHome}
           >
             ABOUT EZZA
             <Typography
