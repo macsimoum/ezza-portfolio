@@ -3,7 +3,7 @@ name: EZZA PORTFOLIO
 on:
   push:
     - branches:
-        - ["master", "main"]
+        - "main"
 
 jobs:
   build:
