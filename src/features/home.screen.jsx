@@ -2,16 +2,11 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import styled, { keyframes } from "styled-components";
 import Typewriter from "typewriter-effect";
-import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import SkipNextIcon from "@mui/icons-material/SkipNext";
 
 const summary =
   "I’m a freelance and full-stack programmer and conducting and developing desktop and web-based applications. Also,  my work focused on state estimation application in distribution systems, distributed measurement systems applied to electric distribution grids, and active and reactive power markets. My current research interests include electric vehicles charging station placement with GIS considerations, electric vehicles load predictions and estimation of electric vehicles’ owner behavior.";
@@ -77,8 +72,6 @@ background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+
       </style>
     </Helmet>
   );
-
-  const theme = useTheme();
 
   return (
     <React.Fragment>
