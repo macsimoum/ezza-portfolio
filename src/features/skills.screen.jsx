@@ -234,7 +234,12 @@ const SkillsScreen = () => {
               sx={{ height: "100%", padding: "5px", margin: "2px" }}
               key={ability}
               clickable={true}
-              avatar={<Avatar alt={ability} src="/ability-outlined.svg" />}
+              avatar={
+                <Avatar
+                  alt={ability}
+                  src={process.env.PUBLIC_URL + "/ability-outlined.svg"}
+                />
+              }
               label={
                 <Typography style={{ whiteSpace: "normal" }} variant="caption">
                   {ability.toUpperCase()}
@@ -332,7 +337,12 @@ const SkillsScreen = () => {
               sx={{ height: "100%", padding: "5px", margin: "2px" }}
               key={ability}
               clickable={true}
-              avatar={<Avatar alt={ability} src="/ability.svg" />}
+              avatar={
+                <Avatar
+                  alt={ability}
+                  src={process.env.PUBLIC_URL + "/ability.svg"}
+                />
+              }
               label={
                 <Typography style={{ whiteSpace: "normal" }} variant="caption">
                   {ability.toUpperCase()}
