@@ -1,5 +1,8 @@
 name: EZZA PORTFOLIO
 
+permissions:
+  contents: write
+
 on:
   push:
     branches:
@@ -22,7 +25,5 @@ jobs:
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
-        permissions:
-          contents: write
         with:
           folder: build
