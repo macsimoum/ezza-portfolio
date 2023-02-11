@@ -46,7 +46,7 @@ const CardComponent = ({ handleOpenWebsite, info = data[0] }) => (
           sx={{ bgcolor: "white", width: 56, height: 56 }}
           aria-label={info.header}
           variant="rounded"
-          src={info.logo}
+          src={process.env.PUBLIC_URL + info.logo}
         />
       }
       title={info.header}
