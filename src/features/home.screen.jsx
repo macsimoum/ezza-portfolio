@@ -81,7 +81,7 @@ background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+
         <CardMedia
           component="img"
           sx={{ width: 151 }}
-          image="/ezza.png"
+          image={process.env.PUBLIC_URL + "/ezza.png"}
           alt="Live from space album cover"
         />
         <Box sx={{ display: "flex", flexDirection: "column" }}>
