@@ -57,7 +57,7 @@ const CardComponent = ({ handleOpenWebsite, info = data[0] }) => (
     <CardMedia
       component="img"
       height="194"
-      image={info.image}
+      image={process.env.PUBLIC_URL + info.image}
       alt={info.header}
     />
     <CardContent aria-label={info.header}>
