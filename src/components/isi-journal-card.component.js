@@ -30,7 +30,12 @@ const ISIJournalCardComponent = ({
       <Typography variant="overline">
         <BootstrapTooltip title="International Journal Type">
           <Chip
-            avatar={<Avatar alt={info.title} src="/title.svg" />}
+            avatar={
+              <Avatar
+                alt={info.title}
+                src={process.env.PUBLIC_URL + "/title.svg"}
+              />
+            }
             label={title}
             sx={{ fontSize: 10, fontWeight: "bold" }}
             clickable={true}
@@ -64,9 +69,21 @@ const ISIJournalCardComponent = ({
           aria-label={info.title}
           component="label"
         >
-          <img src="/binary.svg" color="white" alt={info.title} />
-          <img src="/object.svg" color="white" alt={info.title} />
-          <img src="/finger-print.svg" color="white" alt={info.title} />
+          <img
+            src={process.env.PUBLIC_URL + "/binary.svg"}
+            color="white"
+            alt={info.title}
+          />
+          <img
+            src={process.env.PUBLIC_URL + "/object.svg"}
+            color="white"
+            alt={info.title}
+          />
+          <img
+            src={process.env.PUBLIC_URL + "/finger-print.svg"}
+            color="white"
+            alt={info.title}
+          />
         </IconButton>
       </BootstrapTooltip>
       <BootstrapTooltip title="Journal URL">
@@ -75,12 +92,21 @@ const ISIJournalCardComponent = ({
           aria-label={info.title}
           component="label"
         >
-          <img src="/satelite.svg" color="white" alt={info.title} />
+          <img
+            src={process.env.PUBLIC_URL + "/satelite.svg"}
+            color="white"
+            alt={info.title}
+          />
         </IconButton>
       </BootstrapTooltip>
       <BootstrapTooltip title="Journal Volume">
         <Chip
-          avatar={<Avatar alt={info.title} src="/volume.svg" />}
+          avatar={
+            <Avatar
+              alt={info.title}
+              src={process.env.PUBLIC_URL + "/volume.svg"}
+            />
+          }
           label={info.volume}
           sx={{ fontSize: 10, fontWeight: "bold" }}
           clickable={true}
@@ -88,7 +114,12 @@ const ISIJournalCardComponent = ({
       </BootstrapTooltip>
       <BootstrapTooltip title="Journal Issue">
         <Chip
-          avatar={<Avatar alt={info.title} src="/number.svg" />}
+          avatar={
+            <Avatar
+              alt={info.title}
+              src={process.env.PUBLIC_URL + "/number.svg"}
+            />
+          }
           label={info.issue}
           sx={{ fontSize: 10, fontWeight: "bold" }}
           clickable={true}
@@ -96,7 +127,12 @@ const ISIJournalCardComponent = ({
       </BootstrapTooltip>
       <BootstrapTooltip title="Journal Pages">
         <Chip
-          avatar={<Avatar alt={info.title} src="/page.svg" />}
+          avatar={
+            <Avatar
+              alt={info.title}
+              src={process.env.PUBLIC_URL + "/page.svg"}
+            />
+          }
           label={info.pages}
           sx={{ fontSize: 10, fontWeight: "bold" }}
           clickable={true}
@@ -104,7 +140,12 @@ const ISIJournalCardComponent = ({
       </BootstrapTooltip>
       <BootstrapTooltip title="Journal Category">
         <Chip
-          avatar={<Avatar alt={info.title} src="/article.svg" />}
+          avatar={
+            <Avatar
+              alt={info.title}
+              src={process.env.PUBLIC_URL + "/article.svg"}
+            />
+          }
           label={info.journal.toUpperCase()}
           sx={{ fontSize: 8, fontWeight: "bold" }}
           clickable={true}
@@ -118,13 +159,23 @@ const ISIJournalCardComponent = ({
           background: `linear-gradient( 135deg, #EECE13 10%, #B210FF 100%)`,
           mt: 1,
         }}
-        icon={<Avatar alt={info.title} src="/keywords.svg" />}
+        icon={
+          <Avatar
+            alt={info.title}
+            src={process.env.PUBLIC_URL + "/keywords.svg"}
+          />
+        }
       >
         <AlertTitle>Keywords</AlertTitle>
         {info.keywords.map((kw) => (
           <Chip
             key={kw}
-            avatar={<Avatar alt={kw} src="/open-lock.svg" />}
+            avatar={
+              <Avatar
+                alt={kw}
+                src={process.env.PUBLIC_URL + "/open-lock.svg"}
+              />
+            }
             label={kw.toUpperCase()}
             sx={{ fontSize: 11, fontWeight: "bold" }}
             clickable={true}
@@ -139,7 +190,12 @@ const ISIJournalCardComponent = ({
           aria-label="show more"
         >
           <Chip
-            avatar={<Avatar alt={info.title} src="/expand.svg" />}
+            avatar={
+              <Avatar
+                alt={info.title}
+                src={process.env.PUBLIC_URL + "/expand.svg"}
+              />
+            }
             label="ABSTRACT"
             sx={{ fontSize: 8, fontWeight: "bold" }}
             clickable={true}

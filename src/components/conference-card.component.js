@@ -28,7 +28,12 @@ const ConferenceCardComponent = ({
       <Typography variant="overline">
         <BootstrapTooltip title="International Conference Article Type">
           <Chip
-            avatar={<Avatar alt={info.title} src="/title.svg" />}
+            avatar={
+              <Avatar
+                alt={info.title}
+                src={process.env.PUBLIC_URL + "/title.svg"}
+              />
+            }
             label={title}
             sx={{ fontSize: 10, fontWeight: "bold" }}
             clickable={true}
@@ -62,9 +67,21 @@ const ConferenceCardComponent = ({
           aria-label={info.title}
           component="label"
         >
-          <img src="/binary.svg" color="white" alt={info.title} />
-          <img src="/object.svg" color="white" alt={info.title} />
-          <img src="/finger-print.svg" color="white" alt={info.title} />
+          <img
+            src={process.env.PUBLIC_URL + "/binary.svg"}
+            color="white"
+            alt={info.title}
+          />
+          <img
+            src={process.env.PUBLIC_URL + "/object.svg"}
+            color="white"
+            alt={info.title}
+          />
+          <img
+            src={process.env.PUBLIC_URL + "/finger-print.svg"}
+            color="white"
+            alt={info.title}
+          />
         </IconButton>
       </BootstrapTooltip>
       <BootstrapTooltip title="Conference URL">
@@ -73,12 +90,21 @@ const ConferenceCardComponent = ({
           aria-label={info.title}
           component="label"
         >
-          <img src="/satelite.svg" color="white" alt={info.title} />
+          <img
+            src={process.env.PUBLIC_URL + "/satelite.svg"}
+            color="white"
+            alt={info.title}
+          />
         </IconButton>
       </BootstrapTooltip>
       <BootstrapTooltip title="Conference Category">
         <Chip
-          avatar={<Avatar alt={info.title} src="/article.svg" />}
+          avatar={
+            <Avatar
+              alt={info.title}
+              src={process.env.PUBLIC_URL + "/article.svg"}
+            />
+          }
           label={info.journal.toUpperCase()}
           sx={{ fontSize: 8, fontWeight: "bold" }}
           clickable={true}
@@ -92,7 +118,12 @@ const ConferenceCardComponent = ({
           aria-label="show more"
         >
           <Chip
-            avatar={<Avatar alt={info.title} src="/expand.svg" />}
+            avatar={
+              <Avatar
+                alt={info.title}
+                src={process.env.PUBLIC_URL + "/expand.svg"}
+              />
+            }
             label="ABSTRACT"
             sx={{ fontSize: 8, fontWeight: "bold" }}
             clickable={true}
