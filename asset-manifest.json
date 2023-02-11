@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ezza-portfolio/static/css/main.e6c13ad2.css",
-    "main.js": "/ezza-portfolio/static/js/main.6c44860b.js",
+    "main.js": "/ezza-portfolio/static/js/main.0c9c57c9.js",
     "static/js/787.c50c0575.chunk.js": "/ezza-portfolio/static/js/787.c50c0575.chunk.js",
     "index.html": "/ezza-portfolio/index.html",
     "main.e6c13ad2.css.map": "/ezza-portfolio/static/css/main.e6c13ad2.css.map",
-    "main.6c44860b.js.map": "/ezza-portfolio/static/js/main.6c44860b.js.map",
+    "main.0c9c57c9.js.map": "/ezza-portfolio/static/js/main.0c9c57c9.js.map",
     "787.c50c0575.chunk.js.map": "/ezza-portfolio/static/js/787.c50c0575.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.6c44860b.js"
+    "static/js/main.0c9c57c9.js"
   ]
 }
