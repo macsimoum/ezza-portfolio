@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 import { BorderLinearProgress } from "../components/border-linear-progress.component";
 import { Avatar, Chip, Typography } from "@mui/material";
 import Paper from "@mui/material/Paper";
+import { IconAccessible, IconAccessibleOffFilled } from "@tabler/icons-react";
 
 const data = [
   {
@@ -235,10 +236,9 @@ const SkillsScreen = () => {
               key={ability}
               clickable={true}
               avatar={
-                <Avatar
-                  alt={ability}
-                  src={process.env.PUBLIC_URL + "/ability-outlined.svg"}
-                />
+                <Avatar sx={{ bgcolor: "inherit" }}>
+                  <IconAccessible color="black" />
+                </Avatar>
               }
               label={
                 <Typography style={{ whiteSpace: "normal" }} variant="caption">
@@ -338,10 +338,9 @@ const SkillsScreen = () => {
               key={ability}
               clickable={true}
               avatar={
-                <Avatar
-                  alt={ability}
-                  src={process.env.PUBLIC_URL + "/ability.svg"}
-                />
+                <Avatar sx={{ bgcolor: "inherit" }}>
+                  <IconAccessibleOffFilled color="black" />
+                </Avatar>
               }
               label={
                 <Typography style={{ whiteSpace: "normal" }} variant="caption">

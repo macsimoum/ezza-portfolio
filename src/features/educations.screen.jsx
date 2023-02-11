@@ -11,7 +11,7 @@ import QuizIcon from "@mui/icons-material/Quiz";
 
 const data = [
   {
-    header: "Master Degree | Electrical Engineering | Power Systems",
+    header: "Master Degree | Electrical Engineering | Power Systems (Honor)",
     content:
       "University of Science and Technology of Mazandaran (USTM), Mazandaran, Iran",
     date: "SEPTEMBER 2016 – JULY 2018",
@@ -22,7 +22,7 @@ const data = [
     logo: "/ustm-logo.jpg",
   },
   {
-    header: "Electrical Engineering - Power Systems",
+    header: "Bachelor | Electrical Engineering- Power Systems (Honor)",
     content:
       "Mazandaran University of Science and Technology (USTMB), Mazandaran, Iran",
     date: "SEPTEMBER 2012 – JULY 2016",
@@ -89,7 +89,7 @@ const CardComponent = ({ handleOpenWebsite, info = data[0] }) => (
 
 const EducationsScreen = () => {
   function handleOpenWebsite(url) {
-    // window.open(url, "_blank", "noreferrer");
+    window.open(url, "_blank", "noreferrer");
   }
   return (
     <React.Fragment>

@@ -1743,32 +1743,12 @@
     "@mui/utils" "^5.11.7"
     prop-types "^15.8.1"
 
-"@mui/styled-engine-sc@^5.11.0":
+"@mui/styled-engine-sc@^5.11.0", "@mui/styled-engine@^5.11.0", "@mui/styled-engine@^5.11.8", "@mui/styled-engine@npm:@mui/styled-engine-sc@latest":
   version "5.11.0"
   resolved "https://registry.yarnpkg.com/@mui/styled-engine-sc/-/styled-engine-sc-5.11.0.tgz#b8e01f45d466145a6b9688a325497c722e7f84f3"
   integrity sha512-U8cA7DHB3fnLpDVM5qd/9FGnw5y+LrmwIXQ9Lzk3HYkF903tSMx9jXIbiz1vltpOfZTKX/Rn02m/nkH4OF6Pcg==
   dependencies:
     "@babel/runtime" "^7.20.6"
-    prop-types "^15.8.1"
-
-"@mui/styled-engine@^5.11.0":
-  version "5.11.0"
-  resolved "https://registry.yarnpkg.com/@mui/styled-engine/-/styled-engine-5.11.0.tgz#79afb30c612c7807c4b77602cf258526d3997c7b"
-  integrity sha512-AF06K60Zc58qf0f7X+Y/QjaHaZq16znliLnGc9iVrV/+s8Ln/FCoeNuFvhlCbZZQ5WQcJvcy59zp0nXrklGGPQ==
-  dependencies:
-    "@babel/runtime" "^7.20.6"
-    "@emotion/cache" "^11.10.5"
-    csstype "^3.1.1"
-    prop-types "^15.8.1"
-
-"@mui/styled-engine@^5.11.8":
-  version "5.11.8"
-  resolved "https://registry.yarnpkg.com/@mui/styled-engine/-/styled-engine-5.11.8.tgz#4b0c8c7985b1629f83fdb54dc0883fd07a5d28f0"
-  integrity sha512-iSpZp9AoeictsDi5xAQ4PGXu7mKtQyzMl7ZaWpHIGMFpsNnfY3NQNg+wkj/gpsAZ+Zg+IIyD+t+ig71Kr9fa0w==
-  dependencies:
-    "@babel/runtime" "^7.20.7"
-    "@emotion/cache" "^11.10.5"
-    csstype "^3.1.1"
     prop-types "^15.8.1"
 
 "@mui/system@^5.11.5":
@@ -2057,6 +2037,19 @@
     "@svgr/plugin-jsx" "^5.5.0"
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
+
+"@tabler/icons-react@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@tabler/icons-react/-/icons-react-2.3.0.tgz#6a1f492681fff5f65efb38b8f1befd6894795a21"
+  integrity sha512-///OAT9U9bEfPx81nrVxZGfXM0qyIxZNyicvbF42Dqo5AxX5URrSW4ZWSN4LONYbWBewhjHhIOxWPs+dfa4Eyw==
+  dependencies:
+    "@tabler/icons" "2.3.0"
+    prop-types "^15.7.2"
+
+"@tabler/icons@2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@tabler/icons/-/icons-2.3.0.tgz#7de40af399376e3bdf320710f5d2fc0cdbb5d34b"
+  integrity sha512-zYSgqYodvuuJPNl+Z5UaAP1adzONtCS923aKp7k6SuchrNOc8HE45epzI3ED0X2glYmFkd0Y/YXqPDhYi2p3Fw==
 
 "@testing-library/dom@^8.5.0":
   version "8.20.0"

@@ -10,6 +10,15 @@ import IconButton from "@mui/material/IconButton";
 import CardActions from "@mui/material/CardActions";
 import { ExpandMore } from "./expand-more.component";
 import Paper from "@mui/material/Paper";
+import {
+  IconBinary,
+  IconCylinder,
+  IconFingerprint,
+  IconLayoutNavbarExpand,
+  IconNews,
+  IconPresentationAnalytics,
+  IconSatellite,
+} from "@tabler/icons-react";
 
 const ColorContainer = styled(Card)`
   background-image: linear-gradient(135deg, #a0fe65 10%, #fa016d 100%);
@@ -29,10 +38,9 @@ const ConferenceCardComponent = ({
         <BootstrapTooltip title="International Conference Article Type">
           <Chip
             avatar={
-              <Avatar
-                alt={info.title}
-                src={process.env.PUBLIC_URL + "/title.svg"}
-              />
+              <Avatar sx={{ bgcolor: "inherit" }}>
+                <IconPresentationAnalytics color="black" />
+              </Avatar>
             }
             label={title}
             sx={{ fontSize: 10, fontWeight: "bold" }}
@@ -67,21 +75,9 @@ const ConferenceCardComponent = ({
           aria-label={info.title}
           component="label"
         >
-          <img
-            src={process.env.PUBLIC_URL + "/binary.svg"}
-            color="white"
-            alt={info.title}
-          />
-          <img
-            src={process.env.PUBLIC_URL + "/object.svg"}
-            color="white"
-            alt={info.title}
-          />
-          <img
-            src={process.env.PUBLIC_URL + "/finger-print.svg"}
-            color="white"
-            alt={info.title}
-          />
+          <IconBinary color="black" />
+          <IconCylinder color="black" />
+          <IconFingerprint color="black" />
         </IconButton>
       </BootstrapTooltip>
       <BootstrapTooltip title="Conference URL">
@@ -90,20 +86,15 @@ const ConferenceCardComponent = ({
           aria-label={info.title}
           component="label"
         >
-          <img
-            src={process.env.PUBLIC_URL + "/satelite.svg"}
-            color="white"
-            alt={info.title}
-          />
+          <IconSatellite color="black" />
         </IconButton>
       </BootstrapTooltip>
       <BootstrapTooltip title="Conference Category">
         <Chip
           avatar={
-            <Avatar
-              alt={info.title}
-              src={process.env.PUBLIC_URL + "/article.svg"}
-            />
+            <Avatar sx={{ bgcolor: "inherit" }}>
+              <IconNews color="black" />
+            </Avatar>
           }
           label={info.journal.toUpperCase()}
           sx={{ fontSize: 8, fontWeight: "bold" }}
@@ -119,10 +110,9 @@ const ConferenceCardComponent = ({
         >
           <Chip
             avatar={
-              <Avatar
-                alt={info.title}
-                src={process.env.PUBLIC_URL + "/expand.svg"}
-              />
+              <Avatar sx={{ bgcolor: "inherit" }}>
+                <IconLayoutNavbarExpand color="black" />
+              </Avatar>
             }
             label="ABSTRACT"
             sx={{ fontSize: 8, fontWeight: "bold" }}

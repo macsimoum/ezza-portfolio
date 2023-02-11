@@ -82,7 +82,7 @@ background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+
           component="img"
           sx={{ width: 151 }}
           image={process.env.PUBLIC_URL + "/ezza.png"}
-          alt="Live from space album cover"
+          alt="Alireza Hassannejad"
         />
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           <CardContent sx={{ flex: "1 0 auto" }}>

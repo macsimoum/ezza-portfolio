@@ -12,6 +12,20 @@ import AlertTitle from "@mui/material/AlertTitle";
 import CardActions from "@mui/material/CardActions";
 import { ExpandMore } from "./expand-more.component";
 import Paper from "@mui/material/Paper";
+import {
+  IconBinary,
+  IconBrandPagekit,
+  IconCylinder,
+  IconFingerprint,
+  IconKey,
+  IconLayoutNavbarExpand,
+  IconLockOpen,
+  IconNews,
+  IconPresentationAnalytics,
+  IconSatellite,
+  IconSortAscendingNumbers,
+  IconVolume,
+} from "@tabler/icons-react";
 
 const ColorContainer = styled(Card)`
   background-image: linear-gradient(135deg, #a0fe65 10%, #fa016d 100%);
@@ -31,10 +45,9 @@ const ISIJournalCardComponent = ({
         <BootstrapTooltip title="International Journal Type">
           <Chip
             avatar={
-              <Avatar
-                alt={info.title}
-                src={process.env.PUBLIC_URL + "/title.svg"}
-              />
+              <Avatar sx={{ bgcolor: "inherit" }}>
+                <IconPresentationAnalytics color="black" />
+              </Avatar>
             }
             label={title}
             sx={{ fontSize: 10, fontWeight: "bold" }}
@@ -69,21 +82,9 @@ const ISIJournalCardComponent = ({
           aria-label={info.title}
           component="label"
         >
-          <img
-            src={process.env.PUBLIC_URL + "/binary.svg"}
-            color="white"
-            alt={info.title}
-          />
-          <img
-            src={process.env.PUBLIC_URL + "/object.svg"}
-            color="white"
-            alt={info.title}
-          />
-          <img
-            src={process.env.PUBLIC_URL + "/finger-print.svg"}
-            color="white"
-            alt={info.title}
-          />
+          <IconBinary color="black" />
+          <IconCylinder color="black" />
+          <IconFingerprint color="black" />
         </IconButton>
       </BootstrapTooltip>
       <BootstrapTooltip title="Journal URL">
@@ -92,20 +93,15 @@ const ISIJournalCardComponent = ({
           aria-label={info.title}
           component="label"
         >
-          <img
-            src={process.env.PUBLIC_URL + "/satelite.svg"}
-            color="white"
-            alt={info.title}
-          />
+          <IconSatellite color="black" />
         </IconButton>
       </BootstrapTooltip>
       <BootstrapTooltip title="Journal Volume">
         <Chip
           avatar={
-            <Avatar
-              alt={info.title}
-              src={process.env.PUBLIC_URL + "/volume.svg"}
-            />
+            <Avatar sx={{ bgcolor: "inherit" }}>
+              <IconVolume color="black" />
+            </Avatar>
           }
           label={info.volume}
           sx={{ fontSize: 10, fontWeight: "bold" }}
@@ -115,10 +111,9 @@ const ISIJournalCardComponent = ({
       <BootstrapTooltip title="Journal Issue">
         <Chip
           avatar={
-            <Avatar
-              alt={info.title}
-              src={process.env.PUBLIC_URL + "/number.svg"}
-            />
+            <Avatar sx={{ bgcolor: "inherit" }}>
+              <IconSortAscendingNumbers color="black" />
+            </Avatar>
           }
           label={info.issue}
           sx={{ fontSize: 10, fontWeight: "bold" }}
@@ -128,10 +123,9 @@ const ISIJournalCardComponent = ({
       <BootstrapTooltip title="Journal Pages">
         <Chip
           avatar={
-            <Avatar
-              alt={info.title}
-              src={process.env.PUBLIC_URL + "/page.svg"}
-            />
+            <Avatar sx={{ bgcolor: "inherit" }}>
+              <IconBrandPagekit color="black" />
+            </Avatar>
           }
           label={info.pages}
           sx={{ fontSize: 10, fontWeight: "bold" }}
@@ -141,10 +135,9 @@ const ISIJournalCardComponent = ({
       <BootstrapTooltip title="Journal Category">
         <Chip
           avatar={
-            <Avatar
-              alt={info.title}
-              src={process.env.PUBLIC_URL + "/article.svg"}
-            />
+            <Avatar sx={{ bgcolor: "inherit" }}>
+              <IconNews color="black" />
+            </Avatar>
           }
           label={info.journal.toUpperCase()}
           sx={{ fontSize: 8, fontWeight: "bold" }}
@@ -160,10 +153,9 @@ const ISIJournalCardComponent = ({
           mt: 1,
         }}
         icon={
-          <Avatar
-            alt={info.title}
-            src={process.env.PUBLIC_URL + "/keywords.svg"}
-          />
+          <Avatar sx={{ bgcolor: "inherit" }}>
+            <IconKey size={40} color="black" />
+          </Avatar>
         }
       >
         <AlertTitle>Keywords</AlertTitle>
@@ -171,10 +163,9 @@ const ISIJournalCardComponent = ({
           <Chip
             key={kw}
             avatar={
-              <Avatar
-                alt={kw}
-                src={process.env.PUBLIC_URL + "/open-lock.svg"}
-              />
+              <Avatar sx={{ bgcolor: "inherit" }}>
+                <IconLockOpen color="black" />
+              </Avatar>
             }
             label={kw.toUpperCase()}
             sx={{ fontSize: 11, fontWeight: "bold" }}
@@ -191,10 +182,9 @@ const ISIJournalCardComponent = ({
         >
           <Chip
             avatar={
-              <Avatar
-                alt={info.title}
-                src={process.env.PUBLIC_URL + "/expand.svg"}
-              />
+              <Avatar sx={{ bgcolor: "inherit" }}>
+                <IconLayoutNavbarExpand color="black" />
+              </Avatar>
             }
             label="ABSTRACT"
             sx={{ fontSize: 8, fontWeight: "bold" }}
