@@ -9,7 +9,9 @@ import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
 import SchoolIcon from "@mui/icons-material/School";
 import TuneIcon from "@mui/icons-material/Tune";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AppBar, Toolbar, Typography } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 
 const SkeletonComponent = ({ children }) => {
   const [value, setValue] = React.useState(0);

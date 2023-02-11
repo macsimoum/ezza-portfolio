@@ -1,7 +1,9 @@
 import * as React from "react";
 import styled, { keyframes } from "styled-components";
 import { BorderLinearProgress } from "../components/border-linear-progress.component";
-import { Avatar, Chip, Typography } from "@mui/material";
+import Avatar from "@mui/material/Avatar";
+import Chip from "@mui/material/Chip";
+import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import { IconAccessible, IconAccessibleOffFilled } from "@tabler/icons-react";
 

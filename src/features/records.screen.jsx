@@ -1,8 +1,9 @@
 import * as React from "react";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import { Avatar, ListItemAvatar, Typography } from "@mui/material";
-
+import Avatar from "@mui/material/Avatar";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
+import Typography from "@mui/material/Typography";
 import List from "@mui/material/List";
 import PreviewIcon from "@mui/icons-material/Preview";
 import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
@@ -87,7 +88,13 @@ const RecordsScreen = () => {
   // noinspection JSValidateTypes
   return (
     <React.Fragment>
-      <Typography fontWeight="bolder" color="white" bgcolor="darkred" paddingY={1} sx={{textDecoration: "underline"}}>
+      <Typography
+        fontWeight="bolder"
+        color="white"
+        bgcolor="darkred"
+        paddingY={1}
+        sx={{ textDecoration: "underline" }}
+      >
         Software Engineer at Niroo Research Institute - TEHRAN, IRAN
       </Typography>
       <List dense={true}>
@@ -105,7 +112,7 @@ const RecordsScreen = () => {
                   fontWeight: "bolder",
                   variant: "body2",
                   bgcolor: "black",
-                  paddingLeft: "2px"
+                  paddingLeft: "2px",
                 }}
                 secondaryTypographyProps={{
                   noWrap: false,
@@ -115,7 +122,7 @@ const RecordsScreen = () => {
                   color: "white",
                   bgcolor: "cornflowerblue",
                   paddingLeft: "2px",
-                  paddingTop: "2px"
+                  paddingTop: "2px",
                 }}
                 sx={{ my: 0 }}
                 primary={value.label}

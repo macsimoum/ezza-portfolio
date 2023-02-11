@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
-import { Chip } from "@mui/material";
+import Chip from "@mui/material/Chip";
 import LanguageIcon from "@mui/icons-material/Language";
 import QuizIcon from "@mui/icons-material/Quiz";
 
